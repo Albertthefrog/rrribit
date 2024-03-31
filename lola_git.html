@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Randomly Moving Images</title>
+<title>rrribit</title>
 <link rel="stylesheet" href="lola.css">
 </head>
 <body>
@@ -24,16 +24,16 @@
         </div>
         <ul class="navbar__menu">
             <li class="navbar__item">
-                <a href="" onClick="alert('No Telegram yet')" class="navbar__links" id="home-page">Telegram</a>
+                <a href="https://t.me/rrribitsmaingroup" target="_blank" class="navbar__links" id="home-page">Telegram</a>
             </li>
             <li class="navbar__item">
-                <a href="https://twitter.com/rrribit" class="navbar__links" id="about-page">X</a>
+                <a href="https://twitter.com/rrribit" target="_blank" class="navbar__links" id="about-page">X</a>
             </li>
             <li class="navbar__item">
-                <a href="https://dexscreener.com/new-pairs" class="navbar__links" id="services-page">Instagram</a>
+                <a href="https://www.instagram.com/albert_the_frogg/" target="_blank" class="navbar__links" id="services-page">Art</a>
             </li>
             <li class="navbar__btn">
-                <button class="big-button" onClick="alert('Not launched yet')"><a href="" class="button" id="rrribits">Buy $rrribits</a></button>
+                <button class="big-button"><a href="" class="button" id="rrribits" onclick="alert('Token has not been listed yet. Follow on X and join telegram for more updates')">Buy $rrribits</a></button>
             </li>
         </ul>
     </div>
@@ -70,7 +70,7 @@
     let windowWidth = window.innerWidth;   
     // Number of images
     let numImages = windowWidth < 960 ? 40 : 70;
-    let imgWidth = windowWidth < 960 ? 95 : 150;
+    let imgWidth = windowWidth < 960 ? 80 : 150;
         
 
     // Array to store image paths
@@ -106,11 +106,11 @@
             img.src = randomImagePath;
             img.className = 'image';
             img.style.left = Math.random() * (window.innerWidth - 200) + 'px'; // Adjusted to avoid images being partially outside the viewport
-            img.style.top = Math.random() * (window.innerHeight + window.innerHeight -30) + 'px'; // Adjusted to avoid images being partially outside the viewport
+            img.style.top = Math.random() * (window.innerHeight + window.innerHeight + 70 ) + 'px'; // Adjusted to avoid images being partially outside the viewport
             img.style.zIndex = Math.floor(Math.random() * 10) + 1; // Random z-index between 1 and 3
             img.dx = (Math.random() - 0.5) * 0.5; // Random horizontal speed
             img.dy = (Math.random() - 0.5) * 0.5; // Random vertical speed
-            img.style.width = '150px'; // Adjust the size as needed
+            img.style.width = imgWidth + 'px'; // Adjust the size as needed
             img.style.height = 'auto';
             document.body.appendChild(img);
         }
@@ -135,7 +135,7 @@
                 img.dx *= -1;
                 img.style.left = (imgLeft + img.dx) + 'px';
             }
-            if (imgTop <= 0 || imgTop + imgHeight >= window.innerHeight) {
+            if (imgTop <= 0 || imgTop + imgHeight >= window.innerHeight + window.innerHeight + 200) {
                 // Reverse vertical direction with a buffer zone
                 img.dy *= -1;
                 img.style.top = (imgTop + img.dy) + 'px';
@@ -156,5 +156,4 @@
 
 </body>
 </html>
-
 
